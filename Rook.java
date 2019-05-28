@@ -19,12 +19,16 @@ public class Rook extends ChessPiece{
 	}	
 
 	/** Method that returns a boolean indicating whether or not the bishop can legally move
-	 *  to the specified location (you need to fill this one in).
+	 *  to the specified location, accepts nextRow/Col from 
 	 */
 	public boolean canMoveTo(int nextRow, int nextCol, ChessBoard board)
 	{
 		// Fill this in with your own code.
-		return automagicRookCanMoveTo(nextRow, nextCol, board);	// Eventually this line should not be here
+		if (this.row == nextRow || this.col == nextCol) {
+			if (nextCol <= 8 && nextCol >= 1 && nextRow <= 8 && nextRow >= 1)
+				return true;
+		}
+		return false;
 	}
 
 	/** Implementation of getType() method for the Rook class. Provides a way to identify

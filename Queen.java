@@ -23,8 +23,16 @@ public class Queen extends ChessPiece{
 	 */
 	public boolean canMoveTo(int nextRow, int nextCol, ChessBoard board)
 	{
-		// Fill this in with your own code.
-		return automagicQueenCanMoveTo(nextRow, nextCol, board);	// Eventually this line should not be here
+		double slope;
+		if (this.row-nextRow == 0)
+			return true;
+		else
+			slope = (this.col - nextCol)/(double(this.row-nextRow));
+		if (Math.abs(slope) == 1 || slope == 0) {
+			if (nextRow >= 1 && nextRow <= 8 && nextCol >= 1 && nextRow <= 8))
+				return true;
+		}
+		return false;
 	}
 
 	/** Implementation of getType() method for the Pawn class. Provides a way to identify
