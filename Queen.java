@@ -20,6 +20,8 @@ public class Queen extends ChessPiece{
 
 	/** Method that returns a boolean indicating whether or not the queen can legally move
 	 *  to the specified location (you need to fill this one in).
+	 *
+	 *  TODO: check to see if there are any pieces on its path to the goal
 	 */
 	public boolean canMoveTo(int nextRow, int nextCol, ChessBoard board)
 	{
