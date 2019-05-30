@@ -30,8 +30,8 @@ public class ChessBoard extends DrawableObject{
 	 */
 	public ChessPiece pieceAt(int row, int col)
 	{
-		return null;	// This should eventually do something more than return null
-		return board[row][col]
+		// This should eventually do something more than return null
+		return board[row][col];
 	}
 
 	/** Adds the specified ChessPiece to the ChessBoard (hint: ChessPieces know their
