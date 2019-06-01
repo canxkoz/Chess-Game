@@ -39,8 +39,8 @@ public class King extends ChessPiece{
 	}
 
 	//Notes to Jacob:
-		"
-			/**
+	"
+	    /**
 	     * Verify that piece is on board
 	     * @param board
 	     * @param nextRow
