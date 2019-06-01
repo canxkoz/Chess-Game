@@ -62,10 +62,10 @@ public class King extends ChessPiece{
 	    }
 		"
 		/*Hello Jacob, I hope you are doing well. While I was working on the methods
-		I realized that almost all of the methods extend "ChessPeace", Almost all of
+		I realized that almost all of the methods extend "ChessPiece", Almost all of
 		the pieces have this problem whether they are on board or not. As all of the
 		peaces have the same problem, do you think that we should create a
-		ChessPeace.java ?
+		ChessPiece.java ?
 
 
 /** Implementation of getType() method for the King class. Provides a way to identify
