@@ -16,7 +16,9 @@ public class ChessBoard extends DrawableObject{
 	/** Constant that sets the size of the chess board */
 	public static final int BOARD_SIZE = 8;
 
+
 	public ChessPiece[][] board;
+
 	/** Constructor for the ChessBoard class (do whatever you want with this) */
 	public ChessBoard()
 	{
@@ -28,10 +30,13 @@ public class ChessBoard extends DrawableObject{
 	 * column. If no piece exists at the specified location, should return
 	 * null.
 	 */
-	public ChessPiece pieceAt(int row, int col)
+	public boolean ChessPiece pieceAt(int row, int col)
 	{
+
 		// This should eventually do something more than return null
 		return board[row][col];
+		return null;	// This should eventually do something more than return null (I found it, It must return a boolean.)
+
 	}
 
 	/** Adds the specified ChessPiece to the ChessBoard (hint: ChessPieces know their
@@ -47,8 +52,11 @@ public class ChessBoard extends DrawableObject{
 	 */
 	public void removePiece(int row, int col)
 	{
+
 		// You fill this in.
 		board[row][col] = null;
+		this.piece[xCoord][yCoord] = null;
+
 	}
 
 }
