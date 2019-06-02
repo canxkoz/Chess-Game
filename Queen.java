@@ -29,14 +29,39 @@ public class Queen extends ChessPiece{
 			return false;
 
 		double slope;
-		if (this.row-nextRow == 0)
-			return true;
+
+		//Checking to see if position is allowed
+		if (this.row == nextRow)
+			slope = 0
 		else
 			slope = (this.col - nextCol)/(double(this.row-nextRow));
-		if (Math.abs(slope) == 1 || slope == 0) {
-			return true;
+
+		if (Math.abs(slope) != 1 && slope != 0)
+			return false;
+
+		//Checks goal local
+		ChessPiece piece = board.pieceAt(nextRow, nextCol)
+		if (piece != null && piece.color == this.color)
+			return false;
+
+		//Checking path to goal location
+		piece = null;
+		if (this.row == nextRow || this.col == nextCol) {
+			int d = (this.row == nextRow) ? nextCol : nextRow;
+			for (int i = ((this.row == nextRow) ? this.col : this.row); i != d; ((d-i >= 0) ? i++ : i--)) {
+				piece = (this.row == nextRow) ? board.pieceAt(this.row, i) : board.pieceAt(i, this.col);
+				if (piece)
+					return false;
+			}
 		}
-		return false;
+
+		if (Math.abs(slope) == 1) {
+			for (int i = this.row, j = this.col; this.row != nextRow; (slope == 1) ? (i++, j++) : (i--, j--)) {
+				piece = board.pieceAt(i, j)
+				if (piece)
+					return false;
+			}
+		}
 	}
 
 	/** Implementation of getType() method for the Pawn class. Provides a way to identify

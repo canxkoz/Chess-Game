@@ -16,11 +16,11 @@ public class ChessBoard extends DrawableObject{
 	/** Constant that sets the size of the chess board */
 	public static final int BOARD_SIZE = 8;
 
-	public ChessPiece[BOARD_SIZE][BOARD_SIZE] board;
+	public ChessPiece[][] board;
 	/** Constructor for the ChessBoard class (do whatever you want with this) */
 	public ChessBoard()
 	{
-		board = null;
+		board = new ChessPiece[BOARD_SIZE][BOARD_SIZE];
 		// You fill this in.
 	}
 

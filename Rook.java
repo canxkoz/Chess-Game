@@ -32,7 +32,7 @@ public class Rook extends ChessPiece{
 			int d = (this.row == nextRow) ? nextCol : nextRow;
 
 			//checks to see if there are any pieces on its path
-			for (int i = ((this.row == nextRow) ? this.col : this.row); i != j; ((d-i >= 0) ? i++ : i--)) {
+			for (int i = ((this.row == nextRow) ? this.col : this.row); i != d; ((d-i >= 0) ? i++ : i--)) {
 				piece = (this.row == nextRow) ? board.pieceAt(this.row, i) : board.pieceAt(i, this.col);
 				if (piece)
 					return false;
