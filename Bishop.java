@@ -39,6 +39,29 @@ public class Bishop extends ChessPiece{
 		return true;
 	}
 
+	"
+			/**
+			 * Verify that piece is on board
+			 * @param board
+			 * @param nextRow
+			 * @param nextCol
+			 * @return
+			 */
+			public boolean isOnBoard(Board board, int nextRow, int toY){
+			/* Cannot move to position currently occupying */
+					if(initialRow == nextRow && initialCol == nextCol){
+							return false;
+					}
+			/* Prevent moving out of Board */
+					if(initialRow < 0 || initialCol < 0 || initialRow > 7 ||
+									initialCol > 7 || nextRow < 0 || nextCol < 0 || nextRow > 7 ||
+									nextCol > 7){
+							return false;
+					}
+					else return true;
+			}
+	"
+
 	/**
 	* Check if collision along diagonal path
 	* @param board
