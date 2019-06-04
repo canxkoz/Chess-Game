@@ -25,7 +25,7 @@ public class Bishop extends ChessPiece{
 		int diffX = Math.abs(nextRow - initialRow);
 		int diffY = Math.abs(nextCol - initialRow);
 
-		if(!isOnBoard(board, nextRow, nextCol)){
+		if (nextCol >= 7 || nextCol <= 0 || nextRow >= 7 || nextRow <= 0){
 			return false;
 		}
 		/* Diagonal Movement */
@@ -53,9 +53,7 @@ public class Bishop extends ChessPiece{
 							return false;
 					}
 			/* Prevent moving out of Board */
-					if(initialRow < 0 || initialCol < 0 || initialRow > 7 ||
-									initialCol > 7 || nextRow < 0 || nextCol < 0 || nextRow > 7 ||
-									nextCol > 7){
+		  if(initialRow < 0 || initialCol < 0 || initialRow > 7 || initialCol > 7 || nextRow < 0 || nextCol < 0 || nextRow > 7 ||nextCol > 7){
 							return false;
 					}
 					else return true;
